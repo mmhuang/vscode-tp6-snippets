@@ -1,0 +1,21 @@
+{
+	"controler read parameters": {
+		"prefix": "ming-param",
+		"body": [
+				"\tif(\$this->isJsonRequest()){",
+				"\t\t\$paras = $this->request();",
+				"\t\t\$page = intval(\$paras["p"])intval(\$paras["p"]):1;",
+				"\t\t\$${1:param_name} = intval(\$paras["${1:param_name}"])?intval(\$paras["${1:param_name}"]):20;",
+				"\t}else{",
+				"\t\t\$page = I('p', 1, 'intval'); ",
+				"\t\t\$row = I('row', 20, 'intval'); ",
+				"\t\t\$${1:param_name} = I("${1:param_name}", 2, "intval");",
+				"\t\t}",
+				"\tif( !\$${1:param_name} ){",
+				"\t\treturn \$this->apiFail(ERR_PARAS_INVALID,"${1:param_name}参数错误");",
+				"\t}",
+				"$0"
+		],
+		"description": "读入参数"
+	}
+}
